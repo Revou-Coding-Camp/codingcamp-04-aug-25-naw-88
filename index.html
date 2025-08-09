@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do List Application</title>
 
-    <!-- CSS External Link -->
-    <link rel="stylesheet" href="css\style.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS CDN -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+<body class="bg-gray-100">
+  <header class="text-center mt-5">
+    <h1 class="text-3xl font-bold">To Do List Application</h1>
+  </header>
 
-<body>
-    <!-- Main Header -->
-    <header class="text-center">
-        <h1 class="text-3xl font-bold">To Do List Application</h1>
-    </header>
-    
-    <!-- Main Content -->
-    <main class="px-[16px]">
+  <main class="max-w-3xl mx-auto mt-8 px-4">
+    <form class="flex gap-2 mb-4">
+      <input type="text" id="todo-input" placeholder="Add a new todo" class="border p-2 flex-1" />
+      <input type="date" id="date-input" class="border p-2 flex-1" />
+      <button type="button" onclick="validateForm();" class="bg-blue-500 text-white px-4 py-2 rounded">Add Task</button>
+    </form>
 
-        <form>
-            <div class="flex justify-center mt-5 mb-5">
-                <input type="text"id="todo-input" placeholder="Add a new todo" class="border p-2 w-1/2">
-                <input type="date"id="date-input" placeholder="Add a new todo" class="border p-2 w-1/2">
-                <button type="button" onclick="validateForm();" 
-                    class="bg-blue-500 text-white p-2 ml-2">Add Task</button>
-            </div>
-        </form>
+    <div class="flex justify-between mb-4">
+      <button id="filter-button" onclick="filterTodos();" class="bg-pink-500 text-white px-4 py-2 rounded">Filter</button>
+      <button onclick="clearTodos();" class="bg-yellow-400 text-white px-4 py-2 rounded">Delete All</button>
+    </div>
 
-        <!-- Action Section -->
-        <section class="flex justify-between">
-            <button id="filter-button" class="rounded-[4px] bg-pink-500 text-white p-2">Filter</button>
-            <button onclick="clearTodos();" class="rounded-[4px] bg-yellow-400 text-white p-2">Delete All</button>
-        </section>
+    <table class="w-full bg-white shadow-md rounded">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2 text-left">TASK</th>
+          <th class="p-2 text-left">DUE DATE</th>
+          <th class="p-2 text-left">STATUS</th>
+          <th class="p-2 text-left">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody id="todo-list">
+        <tr><td colspan="4" class="text-center text-gray-500 p-4">No tasks added yet.</td></tr>
+      </tbody>
+    </table>
+  </main>
 
-        <!-- Todo List Section -->
-        <section id="todo-list" class="mt-5">
-            <!-- List Dummy -->
-            <div>
-                <p class="text-gray-700">No tasks added yet.</p>
-            </div>
-        </section>   
-    </main>
+  <footer class="text-center text-gray-500 mt-8">
+    © 2025 To Do List Application
+  </footer>
 
-    <!-- Footer Content -->
-    <footer>
-        <p class="text-center text-gray-500 mt-5">© 2025 To Do List Application</p>
-    </footer>
-
-    <!-- JavaScript External Link -->
-    <script src="js\script.js"></script>
+  <script src="js/script.js"></script>
 </body>
-
 </html>
